@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Melody测试]]></title>
+    <url>%2Fposts%2Fbda3d30d%2F</url>
+    <content type="text"><![CDATA[特性测试]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[依据windows绝赞应用挑选整理]]></title>
     <url>%2Fposts%2Face0e55c%2F</url>
     <content type="text"><![CDATA[安全 CCleaner 实用工具集 MyChrome **Office Tool Plus ** **rufus ** 压缩 7-ZIP 终端 Terminus α 开发工具 **Scoop 图片处理游戏相关邮件网络即时通信下载器 EagleGet FDM 笔记生产力]]></content>
@@ -10,21 +15,9 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[Hexo Editor]]></title>
-    <url>%2Fposts%2Fc750391b%2F</url>
-    <content type="text"></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Next</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Typora体验]]></title>
     <url>%2Fposts%2F4d942339%2F</url>
-    <content type="text"><![CDATA[漂亮 之前都是在用VS Code写，也用过cmd markdown，Typora要漂亮，优雅。 支持 支持markdown的许多扩展语法语法。表格，流程图等等。支持yaml格式，hexo的文章开头都有yaml格式信息。 缺点 不能设置模板。 没有图床，只有Mac才能用。 有的操作很奇怪啊，比如换行会多一行]]></content>
+    <content type="text"><![CDATA[漂亮 之前都是在用VS Code写，也用过cmd markdown，Typora要漂亮，优雅。 支持 支持markdown的许多扩展语法语法。表格，流程图等等。支持yaml格式，hexo的文章开头都有ymal格式信息。 缺点 不能设置模板。 没有图床，只有Mac才能用。 有的操作很奇怪啊，比如换行会多一行]]></content>
       <categories>
         <category>实用 效率</category>
         <category>MarkDown</category>
