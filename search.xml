@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
-    <url>%2Fposts%2F0%2F</url>
-    <content type="text"></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>%2Fposts%2F0%2F</url>
-    <content type="text"><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[Melody测试]]></title>
     <url>%2Fposts%2Fbda3d30d%2F</url>
     <content type="text"><![CDATA[特性测试]]></content>
@@ -20,8 +10,7 @@
     <url>%2Fposts%2Face0e55c%2F</url>
     <content type="text"><![CDATA[安全 CCleaner 实用工具集 MyChrome **Office Tool Plus ** **rufus ** 压缩 7-ZIP 终端 Terminus α 开发工具 **Scoop 图片处理游戏相关邮件网络即时通信下载器 EagleGet FDM 笔记生产力]]></content>
       <categories>
-        <category>实用 效率</category>
-        <category>电脑软件</category>
+        <category>实用效率</category>
       </categories>
   </entry>
   <entry>
@@ -69,8 +58,8 @@
     <url>%2Fposts%2F4d942339%2F</url>
     <content type="text"><![CDATA[漂亮 之前都是在用VS Code写，也用过cmd markdown，Typora要漂亮，优雅。 支持 支持markdown的许多扩展语法语法。表格，流程图等等。支持yaml格式，hexo的文章开头都有ymal格式信息。 缺点 不能设置模板。 没有图床，只有Mac才能用。 有的操作很奇怪啊，比如换行会多一行]]></content>
       <categories>
-        <category>实用 效率</category>
         <category>MarkDown</category>
+        <category>实用效率</category>
       </categories>
   </entry>
   <entry>
@@ -103,7 +92,7 @@
     <url>%2Fposts%2F9793%2F</url>
     <content type="text"><![CDATA[来源:Cmd Markdown 斜体和粗体使用 *和 ** 表示斜体和粗体。示例：这是 斜体，这是 粗体。 分级标题H1H2H3H4H5H6超链接使用[描述](链接地址)为文字增加外链接。Zure 的链接。 无序列表使用 *，+，- 表示无序列表。示例： 无序列表项 一 无序列表项 二 无序列表项 三 有序列表使用数字和点表示有序列表。示例： 有序列表项 一 有序列表项 二 有序列表项 三 文字引用使用 &gt; 表示文字引用。示例： 野火烧不尽，春风吹又生。 行内代码块使用 `代码表示行内代码块。 示例： 让我们聊聊html`。 代码块使用&lt;!–￼0–&gt; 示例： 1print('hello,world!') 插入图像使用 !\[描述](图片链接地址)插入图像。示例： 删除线使用 ~~ 表示删除线。 这是一段错误的文本。 注脚使用[^keyword] 表示注脚。 这是一个注脚[^footnote]的样例。 这是第二个注脚[^footnote2]的样例。 流程图12345678910st=&gt;start: Start:&gt;baidu.comio=&gt;inputoutput: verificationop=&gt;operation: Your Operationcond=&gt;condition: Yes or No?sub=&gt;subroutine: Your Subroutinee=&gt;endst-&gt;io-&gt;op-&gt;condcond(yes)-&gt;econd(no)-&gt;sub-&gt;io 序列图示例 123Alice-&gt;Bob: Hello Bob, how are you?Note right of Bob: Bob thinksBob--&gt;Alice: I am good thanks! 9. 甘特图甘特图内在思想简单。基本是一条线条图，横轴表示时间，纵轴表示活动（项目），线条表示在整个期间上计划和实际的活动完成情况。它直观地表明任务计划在什么时候进行，及实际进展与计划要求的对比。 12345678910111213title 项目开发流程section 项目确定 需求分析 :a1, 2016-06-22, 3d 可行性报告 :after a1, 5d 概念验证 : 5dsection 项目实施 概要设计 :2016-07-05 , 5d 详细设计 :2016-07-08, 10d 编码 :2016-07-15, 10d 测试 :2016-07-22, 5dsection 发布验收 发布: 2d 验收: 3d 表格支持 项目 价格 数量 计算机 $1600 5 手机 $12 12 管线 $1 234 Html 标签本站支持在 Markdown 语法中嵌套 Html 标签，譬如，你可以用 Html 写一个纵跨两行的表格： 12345678910111213&lt;table&gt; &lt;tr&gt; &lt;th rowspan="2"&gt;值班人员&lt;/th&gt; &lt;th&gt;星期一&lt;/th&gt; &lt;th&gt;星期二&lt;/th&gt; &lt;th&gt;星期三&lt;/th&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;李强&lt;/td&gt; &lt;td&gt;张明&lt;/td&gt; &lt;td&gt;王平&lt;/td&gt; &lt;/tr&gt;&lt;/table&gt; 值班人员 星期一 星期二 星期三 李强 张明 王平 待办事宜 Todo 列表使用带有 [ ] 或 [x] （未完成或已完成）项的列表语法撰写一个待办事宜列表，并且支持子列表嵌套以及混用Markdown语法，例如： - [ ] **Cmd Markdown 开发** - [ ] 改进 Cmd 渲染算法，使用局部渲染技术提高渲染效率 - [ ] 支持以 PDF 格式导出文稿 - [x] 新增Todo列表功能 [语法参考](https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments) - [x] 改进 LaTex 功能 - [x] 修复 LaTex 公式渲染问题 - [x] 新增 LaTex 公式编号功能 [语法参考](http://docs.mathjax.org/en/latest/tex.html#tex-eq-numbers) - [ ] **七月旅行准备** - [ ] 准备邮轮上需要携带的物品 - [ ] 浏览日本免税店的物品 - [x] 购买蓝宝石公主号七月一日的船票对应显示如下待办事宜 Todo 列表：​ Cmd Markdown 开发 改进 Cmd 渲染算法，使用局部渲染技术提高渲染效率 支持以 PDF 格式导出文稿 新增Todo列表功能 语法参考 改进 LaTex 功能 修复 LaTex 公式渲染问题 新增 LaTex 公式编号功能 语法参考 七月旅行准备 准备邮轮上需要携带的物品 浏览日本免税店的物品 购买蓝宝石公主号七月一日的船票 [^footnote]: 这是一个 注脚 的 文本。 [^footnote2]: 这是另一个 注脚 的 文本。]]></content>
       <categories>
-        <category>Hexo</category>
+        <category>HEXO</category>
       </categories>
       <tags>
         <tag>Hexo</tag>
@@ -115,7 +104,7 @@
     <url>%2Fposts%2F3baee0e1%2F</url>
     <content type="text"><![CDATA[Hexo+码云 Pages+GitGithub有墙,coding有广告,码云不能绑定域名 Hexo搭建 Hexo官网 部署到码云,我看的那篇找不到了,自己又不想写… Hexo配置参见reuixiy3.2. 站点配置文件注意码云的Pages在子目录下,一定要在站点配置文件修改URL设置语言设置为zh-CN，Next主题的中文语言文件是zh-CN，原来是zh-Hans 部署npm install hexo-deployer-git --save deploy: type: git repo: https://gitee.com/zureov/blog.git branch: master搜索npm install hexo-generator-searchdb --save search: path: search.xml field: post format: html limit: 10000注意使用NexT主题要配置启用 # Local search local_search: enable: true根据目录自动添加分类npm install hexo-auto-category --save # Generate categories from directory-tree # Dependencies: https://github.com/xu-song/hexo-auto-category # depth: the depth of directory-tree you want to generate, should &gt; 0 auto_category: enable: true depth: 3RSS订阅npm install --save hexo-generator-feed plugin: - hexo-generator-feed #Feed Atom feed: type: atom path: atom.xml limit: 0固定链接npm install hexo-abbrlink --save # URL ## If your site is put in a subdirectory, set url as &apos;http://yoursite.com/child&apos; and root as &apos;/child/&apos; url: http://zureov.gitee.io/blog/ root: /blog/ permalink: posts/:abbrlink/ #:year/:month/:day/:title/ permalink_defaults:NexT主题参见reuixiy3.2. 站点配置文件字数统计npm install hexo-symbols-count-time --save #原来NexT用的是hexo-wordcount 相关文章hexo-related-popular-postsValine评论# Valine. # You can get your appid and appkey from https://leancloud.cn # more info please open https://valine.js.org valine: enable: true appid: # your leancloud application appid appkey: # your leancloud application appkey notify: true # mail notifier , https://github.com/xCss/Valine/wiki verify: false # Verification code placeholder: Just go! go! # comment box placeholder avatar: identicon # mm # gravatar style guest_info: nick,mail,link # custom comment header pageSize: 10 # pagination size修改文章底部的带#号的标签修改模板/themes/next/layout/_macro/post.swig，搜索rel=&quot;tag&quot;&gt;#，将#换成&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt; NexT自带样式note标签# Note tag (bs-callout). note: style: flat #simple icons: true #false border_radius: 3disabled note tag. light_bg_offset: 0使用 &lt;div class=&quot;note danger&quot;&gt;&lt;p&gt;danger&lt;/p&gt;&lt;/div&gt; {% note danger no-icon %} note without icon {% endnote %}所有的FontAwesome图标&lt;i class=&quot;fa fa-pencil&quot;&gt;&lt;/i&gt; 代码块hello,world! www.python123.io python1231print('hello,world!') \`\`\`[language] [title] [url] [link-text] 代码 \`\`\`label 标签{% label default@default %}@ 前面的是label的名字，后面的是要显示的文字 tabs标签自定义样式123&lt;blockquote class="question"&gt;内容&lt;/blockquote&gt;&lt;span id="inline-toc"&gt;1.&lt;/span&gt; 技巧 阅读全文&lt;!-- more --&gt; 可视化写文章插件hexo-admin,感觉并不好 多终端同步我放弃了[摊手]退而求次，同步.md文件]]></content>
       <categories>
-        <category>Hexo</category>
+        <category>HEXO</category>
       </categories>
       <tags>
         <tag>Hexo</tag>
@@ -126,7 +115,7 @@
     <url>%2Fposts%2F16107%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
       <categories>
-        <category>Hexo</category>
+        <category>HEXO</category>
       </categories>
   </entry>
 </search>

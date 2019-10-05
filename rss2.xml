@@ -8,41 +8,8 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>学习,工作,生活</description>
-    <pubDate>Fri, 04 Oct 2019 07:20:03 GMT</pubDate>
+    <pubDate>Fri, 04 Oct 2019 11:06:21 GMT</pubDate>
     <generator>http://hexo.io/</generator>
-    
-    <item>
-      <title></title>
-      <link>https://shoorday.github.io/posts/0/</link>
-      <guid>https://shoorday.github.io/posts/0/</guid>
-      <pubDate>Wed, 02 Oct 2019 12:23:27 GMT</pubDate>
-      <description>
-      
-      </description>
-      
-      <comments>https://shoorday.github.io/posts/0/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://shoorday.github.io/posts/0/</link>
-      <guid>https://shoorday.github.io/posts/0/</guid>
-      <pubDate>Wed, 02 Oct 2019 12:23:05 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;hr&gt;
-&lt;hr&gt;
-
-        
-      
-      </description>
-      
-      <content:encoded><![CDATA[<hr><hr>]]></content:encoded>
-      
-      <comments>https://shoorday.github.io/posts/0/#disqus_thread</comments>
-    </item>
     
     <item>
       <title>Melody测试</title>
