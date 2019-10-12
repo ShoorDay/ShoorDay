@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="PYthon打包时非python源码文件的处理"><meta name="keywords" content="Python,PyPi,setuptools"><meta name="author" content="Shoor"><meta name="copyright" content="Shoor"><title>PYthon打包时非python源码文件的处理 | Shoor's Blog</title><link rel="shortcut icon" href="/melody-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.6.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.6.1"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+} </script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#目录结构"><span class="toc-number">1.</span> <span class="toc-text">目录结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#项目结构"><span class="toc-number">1.1.</span> <span class="toc-text">项目结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#非源码文件位置"><span class="toc-number">1.2.</span> <span class="toc-text">非源码文件位置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#将这些文件包含在内的几种设置"><span class="toc-number">2.</span> <span class="toc-text">将这些文件包含在内的几种设置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一个文件"><span class="toc-number">2.1.</span> <span class="toc-text">一个文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#include-package-data-bool"><span class="toc-number">2.2.</span> <span class="toc-text">include_package_data = (bool)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#package-data-str-str-str"><span class="toc-number">2.3.</span> <span class="toc-text">package_data = {(str), [(str), (str)]}</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#exclude-package-data-str-str-str"><span class="toc-number">2.4.</span> <span class="toc-text">exclude_package_data = {(str), [(str), (str)]}</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#data-files-str-str-str"><span class="toc-number">2.5.</span> <span class="toc-text">data_files = [((str), [(str), (str), ]), ]</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="https://sm.ms/image/5nNB6zM83QcOXV2"></div><div class="author-info__name text-center">Shoor</div><div class="author-info__description text-center">学习,工作,生活</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">16</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">9</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">9</span></a></div><hr><div class="author-info-links"><div class="author-info-links__title text-center">Links</div><a class="author-info-links__name text-center" href="https://lovely-smoke.github.io">Lovely-Smoke</a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(http://pic1.win4000.com/wallpaper/2/589adf9eac917.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Shoor's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/tags">标签云</a><a class="site-page" href="/categories">分类</a></span></div><div id="post-info"><div id="post-title">PYthon打包时非python源码文件的处理</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-10-10</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/打包与分发/">打包与分发</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/打包与分发/Python/">Python</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h1><h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">project/</span><br><span class="line">	|<span class="comment">---package</span></span><br><span class="line">        |<span class="comment">---__init__.py</span></span><br><span class="line">        |<span class="comment">---main.py</span></span><br><span class="line">        <span class="built_in">config</span>.json</span><br><span class="line">    |<span class="comment">---data</span></span><br><span class="line">        |<span class="comment">---doc.txt</span></span><br><span class="line">         <span class="comment">---ui.css</span></span><br><span class="line">    |<span class="comment">---README.md</span></span><br><span class="line">    |<span class="comment">---MANIFEST.in</span></span><br><span class="line">    |<span class="comment">---favicon.ico</span></span><br><span class="line">    |<span class="comment">---LICENSE</span></span><br><span class="line">     <span class="comment">---setup.py</span></span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h2 id="非源码文件位置"><a href="#非源码文件位置" class="headerlink" title="非源码文件位置"></a>非源码文件位置</h2><p>三种: </p>
+<ul>
+<li>包内, 如config.json</li>
+<li>项目非包子文件下,如doc.txt</li>
+<li>项目文件夹下, 如README.md, favicon.ico, LICENSE</li>
+</ul>
+<h1 id="将这些文件包含在内的几种设置"><a href="#将这些文件包含在内的几种设置" class="headerlink" title="将这些文件包含在内的几种设置"></a>将这些文件包含在内的几种设置</h1><p>它门都被传递给setup()的参数中, 和一个文件MANIFEST.in中设置</p>
+<h2 id="一个文件"><a href="#一个文件" class="headerlink" title="一个文件"></a>一个文件</h2><p><code>MANIFEST.in</code>文件十分重要, 后面参数的指定都因为各种原因, 需要将文件添加到这里</p>
+<h2 id="include-package-data-bool"><a href="#include-package-data-bool" class="headerlink" title="include_package_data = (bool)"></a>include_package_data = (bool)</h2><ul>
+<li>决定是否打包数据, 也就是说影响的是包内的, 想config.json<br>当然如果愿意, 也可以在data目录下放一个<code>__init__.py</code>文件, 是的其成为一个包, 尽管其中没  有任python源文件</li>
+<li>需要将你需要的文件添加到<code>MANIFEST.in</code>文件中, 这是<a href="https://setuptools.readthedocs.io/en/latest/setuptools.html#including-data-files" target="_blank" rel="noopener">被要求的</a></li>
+</ul>
+<h2 id="package-data-str-str-str"><a href="#package-data-str-str-str" class="headerlink" title="package_data = {(str), [(str), (str)]}"></a>package_data = {(str), [(str), (str)]}</h2><ul>
+<li><p>像第一类文件, 除了上面的方法, 还可以使用这个参数, 这是一个更加细化的控制方式</p>
+</li>
+<li><p>使用了上面的参数, 则<a href="https://setuptools.readthedocs.io/en/latest/setuptools.html#new-and-changed-setup-keywords" target="_blank" rel="noopener">最好不要</a>再使用这个参数</p>
+</li>
+<li><p>由于<a href="https://github.com/pypa/sampleproject/blob/master/setup.py#L166" target="_blank" rel="noopener">过去有的版本的要求</a>, 最好将这里指定的文件也添加到<code>MANIFEST.in</code>文件中去</p>
+</li>
+<li><p><a href="http://peak.telecommunity.com/DevCenter/setuptools#including-data-files" target="_blank" rel="noopener">文件指定</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> setuptools <span class="keyword">import</span> setup, find_packages</span><br><span class="line">setup(</span><br><span class="line">    ...</span><br><span class="line">    package_data = &#123;</span><br><span class="line">        <span class="comment"># 键为包, 值为glob表达式</span></span><br><span class="line">        <span class="comment"># ""空字符串指定所有包</span></span><br><span class="line">        <span class="comment"># 分隔符, 必须用/</span></span><br><span class="line">        <span class="string">''</span>: [<span class="string">'*.txt'</span>, <span class="string">'*.rst'</span>],</span><br><span class="line">        <span class="string">'package'</span>: [<span class="string">'sh/*.sh'</span>],</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意, 修改了这个参数, 最好删除所有原来打包记录文件, 其中可能会有部分文件记录了之前指定的文件, 但在你修改了之后它们却没有正确修改</p>
+<p>可以运行<code>python setup.py clean --all</code></p>
+</li>
+<li><p>访问方法</p>
+<p><a href="http://peak.telecommunity.com/DevCenter/setuptools#accessing-data-files-at-runtime" target="_blank" rel="noopener">官方给出的方法</a>并不清楚</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可能我们是这样访问的</span></span><br><span class="line">foo_config =     open(os.path.join(os.path.dirname(__file__),<span class="string">'foo.conf'</span>).read()</span><br><span class="line"><span class="comment"># 官方建议你</span></span><br><span class="line"><span class="keyword">from</span> pkg_resources <span class="keyword">import</span> resource_string <span class="comment"># 还有resource_stream</span></span><br><span class="line">foo_config = resource_string(__name__, <span class="string">'foo.conf'</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<h2 id="exclude-package-data-str-str-str"><a href="#exclude-package-data-str-str-str" class="headerlink" title="exclude_package_data = {(str), [(str), (str)]}"></a>exclude_package_data = {(str), [(str), (str)]}</h2><ul>
+<li>这个参数用于指定那些包含在前两个参数中 (打包并安装) <strong>打包但不安装</strong></li>
+</ul>
+<h2 id="data-files-str-str-str"><a href="#data-files-str-str-str" class="headerlink" title="data_files = [((str), [(str), (str), ]), ]"></a>data_files = [((str), [(str), (str), ]), ]</h2><ul>
+<li>对于第二, 三类文件似乎只能用这个参数来指定</li>
+<li>每个元组指定了<strong>文件安装后的</strong>相对位置和<strong>要安装的</strong>文件的位置</li>
+<li><a href="https://github.com/pypa/sampleproject/blob/master/setup.py#L176" target="_blank" rel="noopener">访问方法</a>就是使用相对目录<code>sys.prefix</code></li>
+<li><a href="http://peak.telecommunity.com/DevCenter/setuptools#non-package-data-files" target="_blank" rel="noopener">另一个方法</a>仍不清楚</li>
+</ul>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
+<li><p>程序源码,依赖文件和数据文件应该分开</p>
+</li>
+<li><p>需要打包的文件最好都添加到<code>MANIFEST.in</code>文件中</p>
+</li>
+<li><p>data_files指定的文件肯定不和源代码在一起</p>
+</li>
+<li><p>包文件由官方访问方法可知可能也会和源代码分开</p>
+</li>
+<li><p>事实上我在<a href="https://setuptools.readthedocs.io/en/latest/" target="_blank" rel="noopener">setuptools文档</a>看到, 只要是程序运行时用到的, 都应该包含在包中</p>
+<blockquote>
+<p>Instead, the PyPA recommends that any data files you wish to be accessible at run time be included in the package</p>
+</blockquote>
+<p>而对data_file, setuptools文档似乎没有怎么解释, <a href="https://packaging.python.org/guides/distributing-packages-using-setuptools/#data-files" target="_blank" rel="noopener">python文档</a>则有一点说明</p>
+<blockquote>
+<p>It is mostly useful if you need to install files which are used by other programs, which may be unaware of Python packages.</p>
+</blockquote>
+</li>
+</ul>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Shoor</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://shoorday.github.io/posts/bb04cb3e/">https://shoorday.github.io/posts/bb04cb3e/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://shoorday.github.io">Shoor's Blog</a>！</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Python/">Python</a><a class="post-meta__tags" href="/tags/PyPi/">PyPi</a><a class="post-meta__tags" href="/tags/setuptools/">setuptools</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/posts/ceb060d6/"><i class="fa fa-chevron-left">  </i><span>文件权限设置</span></a></div><div class="next-post pull-right"><a href="/posts/bda3d30d/"><span>Melody测试</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="vcomment"></div><script src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var notify = 'true' == true ? true : false;
+var verify = 'false' == true ? true : false;
+var GUEST_INFO = ['nick','mail','link'];
+var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+  return GUEST_INFO.indexOf(item) > -1
+});
+guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+window.valine = new Valine({
+  el:'#vcomment',
+  notify:notify,
+  verify:verify,
+  appId:'ryrprHovi5s9SjWPtxGgtjYe-gzGzoHsz',
+  appKey:'U2RxKxTJPVSEFhDnui93nB2O',
+  placeholder:'Just go go',
+  avatar:'mm',
+  guest_info:guest_info,
+  pageSize:'10',
+  lang: 'zh-cn'
+})</script></div></div><footer class="footer-bg" style="background-image: url(http://pic1.win4000.com/wallpaper/2/589adf9eac917.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2017 - 2019 By Shoor</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.6.1"></script><script src="/js/fancybox.js?version=1.6.1"></script><script src="/js/sidebar.js?version=1.6.1"></script><script src="/js/copy.js?version=1.6.1"></script><script src="/js/fireworks.js?version=1.6.1"></script><script src="/js/transition.js?version=1.6.1"></script><script src="/js/scroll.js?version=1.6.1"></script><script src="/js/head.js?version=1.6.1"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+}</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>

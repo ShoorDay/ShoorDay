@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[文件权限设置]]></title>
+    <url>%2Fposts%2Fceb060d6%2F</url>
+    <content type="text"><![CDATA[Linux 文件基本属性 1-9号代表各种用户的权限 三个一组, 二进制表示, 若为1则可读/写/执行, 设置时可以每组之和的八进制表示则 只读4, 只写2, 只执行1, 可读可写6, 全权限7 仅属主拥有全权限, 其他用户尽可读, 744 Python递归创建目录1os.makedirs(name, mode=0o777, exist_ok=False) 若exist_ok设为False, 则目录存在时返回FileExistsError]]></content>
+      <categories>
+        <category>Code</category>
+        <category>Others</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>IO</tag>
+        <tag>权限</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PYthon打包时非python源码文件的处理]]></title>
+    <url>%2Fposts%2Fbb04cb3e%2F</url>
+    <content type="text"><![CDATA[目录结构项目结构12345678910111213project/ |---package |---__init__.py |---main.py config.json |---data |---doc.txt ---ui.css |---README.md |---MANIFEST.in |---favicon.ico |---LICENSE ---setup.py 非源码文件位置三种: 包内, 如config.json 项目非包子文件下,如doc.txt 项目文件夹下, 如README.md, favicon.ico, LICENSE 将这些文件包含在内的几种设置它门都被传递给setup()的参数中, 和一个文件MANIFEST.in中设置 一个文件MANIFEST.in文件十分重要, 后面参数的指定都因为各种原因, 需要将文件添加到这里 include_package_data = (bool) 决定是否打包数据, 也就是说影响的是包内的, 想config.json当然如果愿意, 也可以在data目录下放一个__init__.py文件, 是的其成为一个包, 尽管其中没 有任python源文件 需要将你需要的文件添加到MANIFEST.in文件中, 这是被要求的 package_data = {(str), [(str), (str)]} 像第一类文件, 除了上面的方法, 还可以使用这个参数, 这是一个更加细化的控制方式 使用了上面的参数, 则最好不要再使用这个参数 由于过去有的版本的要求, 最好将这里指定的文件也添加到MANIFEST.in文件中去 文件指定 1234567891011from setuptools import setup, find_packagessetup( ... package_data = &#123; # 键为包, 值为glob表达式 # ""空字符串指定所有包 # 分隔符, 必须用/ '': ['*.txt', '*.rst'], 'package': ['sh/*.sh'], &#125;) 注意, 修改了这个参数, 最好删除所有原来打包记录文件, 其中可能会有部分文件记录了之前指定的文件, 但在你修改了之后它们却没有正确修改 可以运行python setup.py clean --all 访问方法 官方给出的方法并不清楚 12345# 可能我们是这样访问的foo_config = open(os.path.join(os.path.dirname(__file__),'foo.conf').read()# 官方建议你from pkg_resources import resource_string # 还有resource_streamfoo_config = resource_string(__name__, 'foo.conf') exclude_package_data = {(str), [(str), (str)]} 这个参数用于指定那些包含在前两个参数中 (打包并安装) 打包但不安装 data_files = [((str), [(str), (str), ]), ] 对于第二, 三类文件似乎只能用这个参数来指定 每个元组指定了文件安装后的相对位置和要安装的文件的位置 访问方法就是使用相对目录sys.prefix 另一个方法仍不清楚 总结 程序源码,依赖文件和数据文件应该分开 需要打包的文件最好都添加到MANIFEST.in文件中 data_files指定的文件肯定不和源代码在一起 包文件由官方访问方法可知可能也会和源代码分开 事实上我在setuptools文档看到, 只要是程序运行时用到的, 都应该包含在包中 Instead, the PyPA recommends that any data files you wish to be accessible at run time be included in the package 而对data_file, setuptools文档似乎没有怎么解释, python文档则有一点说明 It is mostly useful if you need to install files which are used by other programs, which may be unaware of Python packages.]]></content>
+      <categories>
+        <category>打包与分发</category>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>PyPi</tag>
+        <tag>setuptools</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Melody测试]]></title>
     <url>%2Fposts%2Fbda3d30d%2F</url>
     <content type="text"><![CDATA[特性测试]]></content>
