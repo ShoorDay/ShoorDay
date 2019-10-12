@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Git忽略文件.gitignore]]></title>
+    <url>%2Fposts%2F181a9d16%2F</url>
+    <content type="text"><![CDATA[.gitignore 文件(夹)以glob模式匹配Github各种.gitignore文件 github/gitignore 常见问题在.gitignore中添加了某文件, 却仍然追踪 如果一个文件一开始没有添加到.gitignore里面，中途添加进去。git 将不会忽略这个文件。 可以在本地缓存删除这个文件, 然后在提交 1git rm -r --cached &lt;FileName&gt;]]></content>
+      <categories>
+        <category>Code</category>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[文件权限设置]]></title>
     <url>%2Fposts%2Fceb060d6%2F</url>
-    <content type="text"><![CDATA[Linux 文件基本属性 1-9号代表各种用户的权限 三个一组, 二进制表示, 若为1则可读/写/执行, 设置时可以每组之和的八进制表示则 只读4, 只写2, 只执行1, 可读可写6, 全权限7 仅属主拥有全权限, 其他用户尽可读, 744 Python递归创建目录1os.makedirs(name, mode=0o777, exist_ok=False) 若exist_ok设为False, 则目录存在时返回FileExistsError]]></content>
+    <content type="text"><![CDATA[Linux 文件基本属性 1-9号代表各种用户的权限 三个一组, 二进制表示, 若为1则可读/写/执行, 设置时可以每组之和的八进制表示则 只读4, 只写2, 只执行1, 可读可写6, 全权限7 仅属主拥有全权限, 其他用户尽可读, 744 Python递归创建目录12import osos.makedirs(name, mode=0o777, exist_ok=False) 若exist_ok设为False, 则目录存在时返回FileExistsError]]></content>
       <categories>
         <category>Code</category>
         <category>Others</category>

@@ -8,8 +8,27 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>学习,工作,生活</description>
-    <pubDate>Sat, 12 Oct 2019 08:15:49 GMT</pubDate>
+    <pubDate>Sat, 12 Oct 2019 09:09:13 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Git忽略文件.gitignore</title>
+      <link>https://shoorday.github.io/posts/181a9d16/</link>
+      <guid>https://shoorday.github.io/posts/181a9d16/</guid>
+      <pubDate>Sat, 12 Oct 2019 09:01:26 GMT</pubDate>
+      <description>
+      
+        &lt;h1 id=&quot;gitignore&quot;&gt;&lt;a href=&quot;#gitignore&quot; class=&quot;headerlink&quot; title=&quot;.gitignore&quot;&gt;&lt;/a&gt;.gitignore&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;文件(夹)以glob模式匹配&lt;br&gt;Github各种&lt;code&gt;.gitignore&lt;/code&gt;文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/github/gitignore&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;github/gitignore&lt;/a&gt;&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<h1 id="gitignore"><a href="#gitignore" class="headerlink" title=".gitignore"></a>.gitignore</h1><ul><li>文件(夹)以glob模式匹配<br>Github各种<code>.gitignore</code>文件</li></ul><p><a href="https://github.com/github/gitignore" target="_blank" rel="noopener">github/gitignore</a></p><a id="more"></a><h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><h2 id="在-gitignore中添加了某文件-却仍然追踪"><a href="#在-gitignore中添加了某文件-却仍然追踪" class="headerlink" title="在.gitignore中添加了某文件, 却仍然追踪"></a>在.gitignore中添加了某文件, 却仍然追踪</h2><blockquote><p>如果一个文件一开始没有添加到.gitignore里面，中途添加进去。git 将不会忽略这个文件。</p></blockquote><p>可以在本地缓存删除这个文件, 然后在提交</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached &lt;FileName&gt;</span><br></pre></td></tr></table></figure>]]></content:encoded>
+      
+      <comments>https://shoorday.github.io/posts/181a9d16/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>文件权限设置</title>
@@ -25,7 +44,7 @@
       
       </description>
       
-      <content:encoded><![CDATA[<h1 id="Linux-文件基本属性"><a href="#Linux-文件基本属性" class="headerlink" title="Linux 文件基本属性"></a>Linux 文件基本属性</h1><p><img src="https://www.runoob.com/wp-content/uploads/2014/06/363003_1227493859FdXT.png" alt="363003_1227493859FdXT"></p><ul><li>1-9号代表各种用户的权限</li><li>三个一组, 二进制表示, 若为1则可读/写/执行, 设置时可以每组之和的八进制表示则<ul><li>只读4, 只写2, 只执行1, 可读可写6, 全权限7</li><li>仅属主拥有全权限, 其他用户尽可读, 744</li></ul></li></ul><h1 id="Python递归创建目录"><a href="#Python递归创建目录" class="headerlink" title="Python递归创建目录"></a>Python递归创建目录</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.makedirs(name, mode=<span class="number">0o777</span>, exist_ok=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure><ul><li>若<code>exist_ok</code>设为<code>False</code>, 则目录存在时返回<code>FileExistsError</code></li></ul>]]></content:encoded>
+      <content:encoded><![CDATA[<h1 id="Linux-文件基本属性"><a href="#Linux-文件基本属性" class="headerlink" title="Linux 文件基本属性"></a>Linux 文件基本属性</h1><p><img src="https://www.runoob.com/wp-content/uploads/2014/06/363003_1227493859FdXT.png" alt></p><ul><li>1-9号代表各种用户的权限</li><li>三个一组, 二进制表示, 若为1则可读/写/执行, 设置时可以每组之和的八进制表示则<ul><li>只读4, 只写2, 只执行1, 可读可写6, 全权限7</li><li>仅属主拥有全权限, 其他用户尽可读, 744</li></ul></li></ul><h1 id="Python递归创建目录"><a href="#Python递归创建目录" class="headerlink" title="Python递归创建目录"></a>Python递归创建目录</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.makedirs(name, mode=<span class="number">0o777</span>, exist_ok=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure><ul><li>若<code>exist_ok</code>设为<code>False</code>, 则目录存在时返回<code>FileExistsError</code></li></ul>]]></content:encoded>
       
       <comments>https://shoorday.github.io/posts/ceb060d6/#disqus_thread</comments>
     </item>
