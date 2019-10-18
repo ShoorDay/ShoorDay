@@ -1,15 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Python装饰器]]></title>
+    <url>%2Fposts%2Ff2b4268f%2F</url>
+    <content type="text"><![CDATA[python中的语法糖, 装饰器, 需要先搞清楚闭包和函数参数解包 装饰器装饰器要装饰一个对象, 可以是函数, 可以是类, 装饰器本身可以是函数也可以是类 装饰 能够接受一个对象 要有对对象的修改或利用对象的能力 对象的基本功能不能变(装饰不应该改变我们写出的直观的功能) 装饰器可能还需要我们能够进行一定的控制, 它可能会需要参数 如果我们愿意, 不应该只能装饰一次 一个例子一个函数装饰函数的例子 1234567891011121314151617181920import timedef de(func, *args, **kwargs): def wrapper(*args, **kwargs): start = time.time() result = func(*args, **kwargs) print('%.3f s' % (time.time() - start)) return result return wrapper@dedef f(): time.sleep(3.123) print("Hi...")# 上述函数定义等价于f = de(f)f()Hi...3.124 s 能够接受一个对象函数当然可以接受一个函数作为参数 要有对对象的修改或利用对象的能力我们当然可以在装饰器内做些事情, 比如计算运行时间 这还是可以应在任意函数的装饰器, 我们还可以为特定的函数编写装饰器, 比如flask将视图函数与路由连接起来 对象的基本功能不能变正如我们看到的, 将所有的参数获取并传给原来的函数 我们返回一个函数 什么也不做的装饰器12345678def de(func, *args, **kwargs): def wrapper(*args, **kwargs): return func(*args, **kwargs) return wrapper # 甚至是这样def de(func): return func 我们需要参数123456789101112131415161718192021# 需要嵌套更多def de2(s): def de(func): def wrapper(*args, **kwargs): start = time.time() time.sleep(s) result = func(*args, **kwargs) print('%.3f s' % (time.time() - start)) return result return wrapper return de@de2(2)def f2(): print("Hi.....")# 相当于 f2 = de2(s)(f2)f2()Hi.....2.001 s f2 = de2(s)(f2) de2(s)返回了一个函数de, 即de2(s)=de, 即我们没有参数时的装饰器de(f2), 返回了我们的函数 应该记住的最后返回的是最内层的wrapper函数, wrapper外部的函数都已执行所以我们可以看作装饰有两部分, 一部分wrapper函数外部代码, 定义函数时即进行装饰,另一部分是wrapper内部代码, 调用时进行装饰 不仅要原函数的返回值12345678910def de2(s): def de(func): def wrapper(*args, **kwargs): start = time.time() time.sleep(s) result = func(*args, **kwargs) print('%.3f s' % (time.time() - start)) return result return wrapper, time.time() - start return de 多个装饰器离函数最近的装饰器先装饰，然后外面的装饰器再进行装饰我们最好不要写……会晕的 类装饰器类装饰器依赖的时类的__call__方法 12345678910111213141516171819class De(): def __init__(self, func): self.s = "Hi!" self.func = func def __call__(self, *args, **kwargs): print(self.s) return self.func(*args, **kwargs)@Dedef foo(s): print(s)# 相当于foo = De(foo).__call__foo("Hi...")Hi!Hi... 注意原函数的属性会变例, 函数也是个对象, 它的属性__name__为函数名, 但是装饰器工作后会改变它的属性, 按照我们的等价写法来理解, 这很正常.解决引起我们函数名改变的原因就是wrapper的调用, 所以我们可以手动修改wrapper.__name__=func.__name__更好的方法是使用functools库的wraps装饰器 123@functools.wraps(func):def wrapper(*arg, **kwargs): ... 这样使用装饰器不会有任何副作用 模板有时我们直接记住一些模板就好了 函数装饰类1234567891011121314151617def de(cls): def wrapper(*arg, **kwargs): print('class name:', cls.__name__) return cls(*arg, **kwargs) return wrapper@declass Foo(): def __init__(self, s): self.s = s print(self.s)# 等价于Foo = de(Foo)m = Foo('Hi')class name: FooHi 类装饰器]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>装饰器</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[python闭包]]></title>
     <url>%2Fposts%2Fc951a1d4%2F</url>
-    <content type="text"><![CDATA[闭包, 仅讨论传统的函数意义上的闭包 闭包返回一个函数 有时我们会遇到这样一个情况, 函数的返回值是个函数 还要使用其外侧函数的局部变量 返回的函数还要使用其外侧函数的变量, 一般来说, 如果一个函数结束，函数的内部所有东西都会释放掉，这时有个问题, 如果是这样工作的, 调用返回的函数时怎么办? 事实上, python确实是这样工作的, 只是对这种情况做特殊处理(还可能是可变变量允许它调用), 这种情况我们叫做闭包. 如果外函数在结束的时候发现有自己的临时变量将来会在内部函数中用到，就把这个临时变量绑定给了内部函数，然后自己再结束。 这也是装饰器的基础 坑闭包变量只有一分如果我们写了一个函数, 那每次调用这个函数时, 函数内的局部变量都会在每次调用时重置.而闭包不是这样, 函数能调用多次, 外侧函数结束时交给它的局部变量只有一份, 每次调用这个变量不会充值 123456789101112131415def f1(): t = 0 start = time.time() def spend(): nonlocal t t = t + time.time()-start print(t) return spendt = f1()t()time.sleep(2)t()time.sleep(2)t()]]></content>
+    <content type="text"><![CDATA[闭包, 仅讨论传统的函数意义上的闭包 闭包返回一个函数 有时我们会遇到这样一个情况, 函数的返回值是个函数 还要使用其外侧函数的局部变量 返回的函数还要使用其外侧函数的变量, 一般来说, 如果一个函数结束，函数的内部所有东西都会释放掉，这时有个问题, 如果是这样工作的, 调用返回的函数时怎么办? 事实上, python确实是这样工作的, 只是对这种情况做特殊处理(还可能是可变变量允许它调用), 这种情况我们叫做闭包. 如果外函数在结束的时候发现有自己的临时变量将来会在内部函数中用到，就把这个临时变量绑定给了内部函数，然后自己再结束。 这也是装饰器的基础 坑拿到的变量只有一份如果我们写了一个函数, 那每次调用这个函数时, 函数内的局部变量都会在每次调用时重置.而闭包不是这样, 函数能调用多次, 外侧函数结束时交给它的局部变量只有一份, 每次调用这个变量不会充值 123456789101112131415def f1(): t = 0 start = time.time() def spend(): nonlocal t t = t + time.time()-start print(t) return spendt = f1()t()time.sleep(2)t()time.sleep(2)t() 调用时才会执行如果返回了多个待调用的函数, 而这些函数中使用了上述的变量, 那就会出现问题, 原因就是使用的外侧函数的变量只有一份 123456789def count(): fs = [] for i in range(1, 4): def f(): return i*i fs.append(f) return fsf1, f2, f3 = count() 解决办法: 不写这样的东西 让这样的函数在内部被调用, 返回一个新的函数, 这个新的函数返回真正工作的函数的结果]]></content>
       <categories>
         <category>Python</category>
       </categories>
       <tags>
         <tag>Python</tag>
         <tag>闭包</tag>
+        <tag>函数</tag>
       </tags>
   </entry>
   <entry>
