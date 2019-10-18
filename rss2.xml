@@ -8,8 +8,43 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>学习,工作,生活</description>
-    <pubDate>Sat, 12 Oct 2019 09:09:13 GMT</pubDate>
+    <pubDate>Fri, 18 Oct 2019 10:00:04 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>python闭包</title>
+      <link>https://shoorday.github.io/posts/c951a1d4/</link>
+      <guid>https://shoorday.github.io/posts/c951a1d4/</guid>
+      <pubDate>Fri, 18 Oct 2019 09:28:45 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;闭包, 仅讨论传统的函数意义上的闭包&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>闭包, 仅讨论传统的函数意义上的闭包</p><a id="more"></a><h1 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h1><h2 id="返回一个函数"><a href="#返回一个函数" class="headerlink" title="返回一个函数"></a>返回一个函数</h2><p>  有时我们会遇到这样一个情况, 函数的返回值是个函数</p><h2 id="还要使用其外侧函数的局部变量"><a href="#还要使用其外侧函数的局部变量" class="headerlink" title="还要使用其外侧函数的局部变量"></a>还要使用其外侧函数的局部变量</h2><p>  返回的函数还要使用其外侧函数的变量, 一般来说, 如果一个函数结束，函数的内部所有东西都会释放掉，这时有个问题, 如果是这样工作的, 调用返回的函数时怎么办?<br>  事实上, <strong>python确实是这样工作的, 只是对这种情况做特殊处理</strong>(还可能是可变变量允许它调用), 这种情况我们叫做闭包.</p><blockquote><p>如果外函数在结束的时候发现有自己的临时变量将来会在内部函数中用到，就把这个临时变量绑定给了内部函数，然后自己再结束。</p></blockquote><p>这也是装饰器的基础</p><h1 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h1><h2 id="闭包变量只有一分"><a href="#闭包变量只有一分" class="headerlink" title="闭包变量只有一分"></a>闭包变量只有一分</h2><p>如果我们写了一个函数, 那每次调用这个函数时, 函数内的局部变量都会在每次调用时重置.<br><strong>而闭包不是这样</strong>, 函数能调用多次, 外侧函数结束时交给它的局部变量只有一份, 每次调用这个变量不会充值</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">()</span>:</span></span><br><span class="line">    t = <span class="number">0</span></span><br><span class="line">    start = time.time()</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">spend</span><span class="params">()</span>:</span></span><br><span class="line">        <span class="keyword">nonlocal</span> t</span><br><span class="line">        t =  t + time.time()-start</span><br><span class="line">        print(t)</span><br><span class="line">    <span class="keyword">return</span> spend</span><br><span class="line"></span><br><span class="line">t = f1()</span><br><span class="line">t()</span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line">t()</span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line">t()</span><br></pre></td></tr></table></figure>]]></content:encoded>
+      
+      <comments>https://shoorday.github.io/posts/c951a1d4/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>测试</title>
+      <link>https://shoorday.github.io/posts/53b5426a/</link>
+      <guid>https://shoorday.github.io/posts/53b5426a/</guid>
+      <pubDate>Wed, 16 Oct 2019 15:29:05 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<a id="more"></a>]]></content:encoded>
+      
+      <comments>https://shoorday.github.io/posts/53b5426a/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>Git忽略文件.gitignore</title>

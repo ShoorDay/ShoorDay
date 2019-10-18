@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[python闭包]]></title>
+    <url>%2Fposts%2Fc951a1d4%2F</url>
+    <content type="text"><![CDATA[闭包, 仅讨论传统的函数意义上的闭包 闭包返回一个函数 有时我们会遇到这样一个情况, 函数的返回值是个函数 还要使用其外侧函数的局部变量 返回的函数还要使用其外侧函数的变量, 一般来说, 如果一个函数结束，函数的内部所有东西都会释放掉，这时有个问题, 如果是这样工作的, 调用返回的函数时怎么办? 事实上, python确实是这样工作的, 只是对这种情况做特殊处理(还可能是可变变量允许它调用), 这种情况我们叫做闭包. 如果外函数在结束的时候发现有自己的临时变量将来会在内部函数中用到，就把这个临时变量绑定给了内部函数，然后自己再结束。 这也是装饰器的基础 坑闭包变量只有一分如果我们写了一个函数, 那每次调用这个函数时, 函数内的局部变量都会在每次调用时重置.而闭包不是这样, 函数能调用多次, 外侧函数结束时交给它的局部变量只有一份, 每次调用这个变量不会充值 123456789101112131415def f1(): t = 0 start = time.time() def spend(): nonlocal t t = t + time.time()-start print(t) return spendt = f1()t()time.sleep(2)t()time.sleep(2)t()]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>闭包</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[测试]]></title>
+    <url>%2Fposts%2F53b5426a%2F</url>
+    <content type="text"><![CDATA[]]></content>
+      <categories>
+        <category>未分类</category>
+      </categories>
+      <tags>
+        <tag>test</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Git忽略文件.gitignore]]></title>
     <url>%2Fposts%2F181a9d16%2F</url>
     <content type="text"><![CDATA[.gitignore 文件(夹)以glob模式匹配Github各种.gitignore文件 github/gitignore 常见问题在.gitignore中添加了某文件, 却仍然追踪 如果一个文件一开始没有添加到.gitignore里面，中途添加进去。git 将不会忽略这个文件。 可以在本地缓存删除这个文件, 然后在提交 1git rm -r --cached &lt;FileName&gt;]]></content>
