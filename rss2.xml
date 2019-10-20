@@ -8,8 +8,24 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>学习,工作,生活</description>
-    <pubDate>Sun, 20 Oct 2019 10:29:42 GMT</pubDate>
+    <pubDate>Sun, 20 Oct 2019 13:22:47 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>递归</title>
+      <link>https://shoorday.github.io/posts/979ba5c0/</link>
+      <guid>https://shoorday.github.io/posts/979ba5c0/</guid>
+      <pubDate>Sun, 20 Oct 2019 12:13:34 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;递归, 简单来说就是函数调用自己&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>递归, 简单来说就是函数调用自己</p><a id="more"></a><h1 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h1><h2 id="使用条件"><a href="#使用条件" class="headerlink" title="使用条件"></a>使用条件</h2><ul><li>base case 要有结束递归的条件</li><li>recursive case 递归条件</li></ul><h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p>从数据结构的角度来理解, 栈的特性是有序排列, 先进后出, 后进后出, 可以想作进了死胡同.<br>但<a href="https://www.zhihu.com/question/319926787/answer/651578913" target="_blank" rel="noopener">栈</a>是抽象自计算机运行原理的概念, 就是cpu执行程序的规则</p><h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><ul><li>递归只是让解决方案更清晰，并没有性能上的优势。</li><li>大多数递归都可以用循环代替</li><li>循环的性能更好</li></ul>]]></content:encoded>
+      
+      <comments>https://shoorday.github.io/posts/979ba5c0/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>旅行商问题</title>

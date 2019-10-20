@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[递归]]></title>
+    <url>%2Fposts%2F979ba5c0%2F</url>
+    <content type="text"><![CDATA[递归, 简单来说就是函数调用自己 递归使用条件 base case 要有结束递归的条件 recursive case 递归条件 栈从数据结构的角度来理解, 栈的特性是有序排列, 先进后出, 后进后出, 可以想作进了死胡同.但栈是抽象自计算机运行原理的概念, 就是cpu执行程序的规则 结论 递归只是让解决方案更清晰，并没有性能上的优势。 大多数递归都可以用循环代替 循环的性能更好]]></content>
+      <categories>
+        <category>算法</category>
+        <category>函数</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>函数</tag>
+        <tag>算法</tag>
+        <tag>递归</tag>
+        <tag>C</tag>
+        <tag>栈</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[旅行商问题]]></title>
     <url>%2Fposts%2Fdcbe0c49%2F</url>
     <content type="text"><![CDATA[问题描述 一位旅行商要去n座城市, 选择不同的城市顺序, 有不同的路线, 求找最短路程的路线 时间复杂度O(n!)似乎无优化解]]></content>
