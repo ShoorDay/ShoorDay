@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[递归]]></title>
     <url>%2Fposts%2F979ba5c0%2F</url>
-    <content type="text"><![CDATA[递归, 简单来说就是函数调用自己 递归使用条件 base case 要有结束递归的条件 recursive case 递归条件 栈从数据结构的角度来理解, 栈的特性是有序排列, 先进后出, 后进后出, 可以想作进了死胡同.但栈是抽象自计算机运行原理的概念, 就是cpu执行程序的规则 结论 递归只是让解决方案更清晰，并没有性能上的优势。 大多数递归都可以用循环代替 循环的性能更好]]></content>
+    <content type="text"><![CDATA[递归, 简单来说就是函数调用自己 递归使用条件 base case 要有结束递归的条件 (递归边界) recursive case 递归条件 最简单的递归函数调用在函数的末尾, 叫作尾递归, 完全可以写成一个循环 1234567def fi(n): if n == 1: return 1 elif n == 2: return 1 else: return fi(n - 1) + fi(n - 2) 栈 从数据结构的角度来理解, 栈的特性是有序排列, 先进后出, 后进后出, 可以想作进了死胡同. 但栈是抽象自计算机运行原理的概念, 就是cpu执行程序的规则 每次调用函数都会创建一个栈, 将占用大量内存 D&amp;C 分而治之工作原理 找出简单的基线条件 确定如何缩小问题的规模, 使之符合基线条件 简单例子递归的方法数组求和base case: 数组为空或者数组只有一个元素如何缩小规模: 弹出数组元素(移动下标) 123456int sum(int a[], int start, int end)&#123; if (start == end) //递归边界 return a[start]; return a[start] + sum(a, start + 1, end); //递归&#125; 结论 递归只是让解决方案更清晰，并没有性能上的优势。 大多数递归都可以用循环代替 循环的性能更好 处理不当, 十分累赘]]></content>
       <categories>
         <category>算法</category>
         <category>函数</category>
