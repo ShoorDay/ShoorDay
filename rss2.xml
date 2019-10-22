@@ -8,8 +8,26 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>学习,工作,生活</description>
-    <pubDate>Tue, 22 Oct 2019 11:22:00 GMT</pubDate>
+    <pubDate>Tue, 22 Oct 2019 11:27:39 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Python内置函数super</title>
+      <link>https://shoorday.github.io/posts/7611e2b2/</link>
+      <guid>https://shoorday.github.io/posts/7611e2b2/</guid>
+      <pubDate>Tue, 22 Oct 2019 11:23:56 GMT</pubDate>
+      <description>
+      
+        &lt;h1 id=&quot;文档&quot;&gt;&lt;a href=&quot;#文档&quot; class=&quot;headerlink&quot; title=&quot;文档&quot;&gt;&lt;/a&gt;文档&lt;/h1&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;super([type[, object-&lt;span class=&quot;keyword&quot;&gt;or&lt;/span&gt;-type]])&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;返回将方法调用委托给类型的父级或同级类的代理对象。用于访问已在类中重写的方法&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<h1 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">super([type[, object-<span class="keyword">or</span>-type]])</span><br></pre></td></tr></table></figure><p>返回将方法调用委托给类型的父级或同级类的代理对象。用于访问已在类中重写的方法</p><a id="more"></a>]]></content:encoded>
+      
+      <comments>https://shoorday.github.io/posts/7611e2b2/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>Python的内置函数getattr</title>

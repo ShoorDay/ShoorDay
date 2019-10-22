@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Python内置函数super]]></title>
+    <url>%2Fposts%2F7611e2b2%2F</url>
+    <content type="text"><![CDATA[文档1super([type[, object-or-type]]) 返回将方法调用委托给类型的父级或同级类的代理对象。用于访问已在类中重写的方法]]></content>
+      <categories>
+        <category>Python</category>
+        <category>面向对象</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>面向对象</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Python的内置函数getattr]]></title>
     <url>%2Fposts%2F4c00b674%2F</url>
     <content type="text"><![CDATA[1getattr(object, name[, default]) 文档返回对象命名属性的值。name必须是字符串。如果该字符串是对象的属性之一，则返回该属性的值。例如， getattr(x, &#39;foobar&#39;) 等同于 x.foobar。如果指定的属性不存在，且提供了 default 值，则返回它，否则触发 AttributeError。 Help123456789In [5]: help(getattr) Help on built-in function getattr in module builtins:getattr(...) getattr(object, name[, default]) -&gt; value Get a named attribute from an object; getattr(x, 'y') is equivalent to x.y. When a default argument is given, it is returned when the attribute doesn't exist; without it, an exception is raised in that case.In [6]: getattr(str, "join") Out[6]: &lt;method 'join' of 'str' objects&gt; 应用Django CBV模式12OneView.as_view()getattr(request.method.lower) 多个请求封装在一个类中, 通过getattr()获得匹配方法]]></content>
