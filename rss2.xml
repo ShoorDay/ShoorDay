@@ -8,8 +8,24 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>学习,工作,生活</description>
-    <pubDate>Tue, 22 Oct 2019 11:27:39 GMT</pubDate>
+    <pubDate>Tue, 22 Oct 2019 13:14:46 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>RESTful接口规范</title>
+      <link>https://shoorday.github.io/posts/8a3e1f41/</link>
+      <guid>https://shoorday.github.io/posts/8a3e1f41/</guid>
+      <pubDate>Tue, 22 Oct 2019 11:58:26 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;REST: 一种API风格&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>REST: 一种API风格</p><a id="more"></a><h1 id="重要几点规范"><a href="#重要几点规范" class="headerlink" title="重要几点规范"></a>重要几点规范</h1><h2 id="域名-api路径"><a href="#域名-api路径" class="headerlink" title="域名/api路径"></a>域名/api路径</h2><ul><li>尽量简单<br><code>example.com/api</code><br><code>api.example.com</code> 有跨域问题</li></ul><h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><ul><li>路径中<br><code>api/1</code></li><li>headers中</li></ul><h2 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h2><ul><li>名词</li></ul><h2 id="几种方法"><a href="#几种方法" class="headerlink" title="几种方法"></a>几种方法</h2><ul><li>GET</li><li>POST</li><li>PUT</li><li>PATCH</li><li>DELETE</li></ul><h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><p>get方法参数</p><ul><li>limit</li><li>offset</li><li>page</li><li>per_page</li><li>sortby</li><li>order</li><li>pk</li></ul><h2 id="状态码与Code"><a href="#状态码与Code" class="headerlink" title="状态码与Code"></a>状态码与Code</h2><h2 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h2><h2 id="返回结果"><a href="#返回结果" class="headerlink" title="返回结果"></a>返回结果</h2><h2 id="Hypermedia-API"><a href="#Hypermedia-API" class="headerlink" title="Hypermedia API"></a>Hypermedia API</h2><hr><p><a href="https://www.cnblogs.com/wupeiqi/articles/7805382.html" target="_blank" rel="noopener">Django Rest Framework</a></p>]]></content:encoded>
+      
+      <comments>https://shoorday.github.io/posts/8a3e1f41/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>Python内置函数super</title>
@@ -24,7 +40,7 @@
       
       </description>
       
-      <content:encoded><![CDATA[<h1 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">super([type[, object-<span class="keyword">or</span>-type]])</span><br></pre></td></tr></table></figure><p>返回将方法调用委托给类型的父级或同级类的代理对象。用于访问已在类中重写的方法</p><a id="more"></a>]]></content:encoded>
+      <content:encoded><![CDATA[<h1 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">super([type[, object-<span class="keyword">or</span>-type]])</span><br></pre></td></tr></table></figure><p>返回将方法调用委托给类型的父级或同级类的代理对象。用于访问已在类中重写的方法</p><a id="more"></a><h1 id="检索顺序"><a href="#检索顺序" class="headerlink" title="检索顺序"></a>检索顺序</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span><span class="params">(A, B)</span>:</span></span><br></pre></td></tr></table></figure><blockquote><p><strong>mro</strong> :<br>C, A,  B, object</p></blockquote><ul><li>如果不带参数:则A -&gt; B -&gt; object, 相当于super(C, self)</li><li>super(A, self) 则B -&gt; object</li></ul>]]></content:encoded>
       
       <comments>https://shoorday.github.io/posts/7611e2b2/#disqus_thread</comments>
     </item>

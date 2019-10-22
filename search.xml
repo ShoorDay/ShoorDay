@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[RESTful接口规范]]></title>
+    <url>%2Fposts%2F8a3e1f41%2F</url>
+    <content type="text"><![CDATA[REST: 一种API风格 重要几点规范域名/api路径 尽量简单example.com/apiapi.example.com 有跨域问题 版本 路径中api/1 headers中 路径 名词 几种方法 GET POST PUT PATCH DELETE 搜索get方法参数 limit offset page per_page sortby order pk 状态码与Code错误处理返回结果Hypermedia API Django Rest Framework]]></content>
+      <categories>
+        <category>Code</category>
+        <category>Web</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Python内置函数super]]></title>
     <url>%2Fposts%2F7611e2b2%2F</url>
-    <content type="text"><![CDATA[文档1super([type[, object-or-type]]) 返回将方法调用委托给类型的父级或同级类的代理对象。用于访问已在类中重写的方法]]></content>
+    <content type="text"><![CDATA[文档1super([type[, object-or-type]]) 返回将方法调用委托给类型的父级或同级类的代理对象。用于访问已在类中重写的方法 检索顺序1class C(A, B): mro :C, A, B, object 如果不带参数:则A -&gt; B -&gt; object, 相当于super(C, self) super(A, self) 则B -&gt; object]]></content>
       <categories>
         <category>Python</category>
         <category>面向对象</category>
